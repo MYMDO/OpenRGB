@@ -1641,7 +1641,7 @@ void OpenRGBDialog::onShowDialogMessage()
 
     DontShowAgain = false;
 
-    QObject::connect(CheckBox_DontShowAgain, &QCheckBox::stateChanged, [this](int state)
+    QObject::connect(CheckBox_DontShowAgain, &QCheckBox::checkStateChanged, [this](Qt::CheckState state)
     {
         if(static_cast<Qt::CheckState>(state) == Qt::CheckState::Checked)
         {

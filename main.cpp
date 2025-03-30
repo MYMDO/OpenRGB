@@ -219,12 +219,6 @@ int main(int argc, char* argv[])
         LOG_TRACE("[main] initializing GUI");
 
         /*-----------------------------------------------------*\
-        | Enable high DPI scaling support                       |
-        \*-----------------------------------------------------*/
-        QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps,    true);
-        QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
-
-        /*-----------------------------------------------------*\
         | Enable high DPI fractional scaling support on Windows |
         \*-----------------------------------------------------*/
         #if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0) && defined(Q_OS_WIN)

@@ -596,10 +596,10 @@ void DeviceView::mousePressEvent(QMouseEvent *event)
         /*-----------------------------------------------------*\
         | It's okay if the size becomes negative                |
         \*-----------------------------------------------------*/
-        selectionRect.setLeft(event->x());
-        selectionRect.setTop(event->y());
-        selectionRect.setRight(event->x());
-        selectionRect.setBottom(event->y());
+        selectionRect.setLeft(event->position().x());
+        selectionRect.setTop(event->position().y());
+        selectionRect.setRight(event->position().x());
+        selectionRect.setBottom(event->position().y());
 
         updateSelection();
         update();
@@ -611,8 +611,8 @@ void DeviceView::mouseMoveEvent(QMouseEvent *event)
     if(per_led)
     {
         lastMousePos = event->pos();
-        selectionRect.setRight(event->x());
-        selectionRect.setBottom(event->y());
+        selectionRect.setRight(event->position().x());
+        selectionRect.setBottom(event->position().y());
 
         if(mouseDown)
         {

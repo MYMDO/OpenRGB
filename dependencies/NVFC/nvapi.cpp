@@ -268,6 +268,7 @@ static bool QueryInterfaceOpaque(nvapi_QueryInterface_t query_interface, NV_U32 
 template<typename F>
 static void QueryInterfaceCast(nvapi_QueryInterface_t query_interface, NV_U32 id, const char */*function_name*/, F &function_pointer)
 {
+    // unused result; seems to be for debugging?
 	const bool result = QueryInterfaceOpaque(query_interface, id, (void **)&function_pointer);
     ////Log::write("%s querying interface '0x%08x' '%s'", result ? "success" : "failure", id, function_name);
 }
